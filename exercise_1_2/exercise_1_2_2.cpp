@@ -1,7 +1,6 @@
 #include <iostream>
 
-int main()
-{
+int main() {
     // Part 2: Palindrome Check
 
     // Input string from command-line
@@ -11,6 +10,15 @@ int main()
 
     // Palindrome Check
     // WRITE YOUR PALINDROME CHECK HERE
+    bool is_palindrome = true;
+    for (int left = 0, right = str.size() - 1; left < right; left++, right--) {
+        if (str.at(left) != str.at(right)) {
+            is_palindrome = false;
+            break;
+        }
+    }
+
+    std::cout << str << " is " << (is_palindrome ? "" : "NOT ") << "a palindrome";
 
     return 0;
 }
